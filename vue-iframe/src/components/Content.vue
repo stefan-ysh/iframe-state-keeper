@@ -9,7 +9,7 @@
         @load="loadandpostmessage($event, iframe)"
         :ref="'iframe' + i"
         v-show="i === currentMenuIndex"
-        src="http://192.168.2.16:3000"
+        src="http://localhost:3000"
         frameborder="0"
         width="100%"
         height="100%"
