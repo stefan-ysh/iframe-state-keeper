@@ -53,46 +53,38 @@ function App() {
         break;
     }
   };
-  const viewPed = (e) => {
+  const viewPwd = (e) => {
     e.preventDefault();
     // 切换密码显隐状态
     setPasswordType(passwordType === "password" ? "text" : "password");
   };
 
   return (
-    <div className="App">
-      {/* 登录表单 */}
-
-      <h1 className="title">{flag}</h1>
+    <div class="login-box">
+      <h2>Login {flag}</h2>
       <form>
-        <div className="avatar">
-          <img alt="avatar" src={avatar} />
-        </div>
-        <label>
-          <span>USERNAME</span>
+        <div class="user-box">
           <input
             type="text"
             value={form.name}
             onChange={(e) => changeForm("name", e)}
             name="name"
           />
-        </label>
-        <br />
-        <label>
-          <span>PASSWORD</span>
-          {/* 支持查看密码功能 */}
+          <label>Username</label>
+        </div>
+        <div class="user-box">
           <input
             type={passwordType}
             value={form.password}
             onChange={(e) => changeForm("password", e)}
             name="password"
           />
-          {/* 切换密码显隐状态的按钮 */}
           <button
-            onClick={viewPed}
+            onClick={viewPwd}
             style={{
               background: "transparent",
-              border: "none",
+              // border: "none",
+              float: "right",
               cursor: "pointer",
             }}
             title={
@@ -101,10 +93,15 @@ function App() {
           >
             {passwordType === "password" ? "🕶" : "👀"}
           </button>
-        </label>
-
-        <br />
-        <input type="submit" value="LOGIN" />
+          <label>Password</label>
+        </div>
+        <a href="/">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit
+        </a>
       </form>
     </div>
   );
